@@ -116,7 +116,6 @@
     color: var(--grey-500);
     background-color: var(--grey-100);
     margin: 0 auto;
-    max-inline-size: 1200px;
   }
 
   h1 {
@@ -147,10 +146,12 @@
 
 @layer layout {
   main {
+    max-inline-size: 1200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    margin: 0 auto;
   }
 
   section {
@@ -211,10 +212,39 @@
     color: var(--white);
   }
 
-  @media (width >= 700px) {
+  @media (width >= 1000px) {
     main {
-      grid-template-columns: repeat(3, 1fr);
+      /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
       grid-template-rows: repeat(2, auto);
+      grid-auto-flow: dense;
+    }
+
+    .testimonial-1 {
+      grid-column: span 2;
+      grid-row: 1;
+      order: 1;
+    }
+
+    .testimonial-2 {
+      grid-row: 1;
+      order: 2;
+    }
+
+    .testimonial-3 {
+      grid-row: 2;
+      order: 1;
+    }
+
+    .testimonial-4 {
+      grid-column: span 2;
+      grid-row: 2;
+      order: 2;
+    }
+
+    .testimonial-5 {
+      grid-column: 4;
+      grid-row: span 2;
+      order: 3;
     }
   }
 }
