@@ -115,7 +115,7 @@
     font-weight: 300;
     color: var(--grey-500);
     background-color: var(--grey-100);
-    margin: 0 auto;
+    margin: 5em auto;
   }
 
   h1 {
@@ -212,9 +212,8 @@
     color: var(--white);
   }
 
-  @media (width >= 1000px) {
+  @media (min-width: 1000px) {
     main {
-      /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
       grid-template-rows: repeat(2, auto);
       grid-auto-flow: dense;
     }
